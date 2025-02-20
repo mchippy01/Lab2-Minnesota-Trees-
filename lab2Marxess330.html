@@ -103,8 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="before-answering-the-questions-i-am-loading-the-necessary-things" class="level1">
-<h1>Before answering the questions, I am loading the necessary things</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -136,7 +134,7 @@ $ inc     &lt;dbl&gt; 0.930, 0.950, 0.985, 0.985, 0.715, 0.840, 0.685, 0.940, 1.
 $ rad_ib  &lt;dbl&gt; 10.78145, 11.73145, 12.71645, 13.70145, 14.41645, 15.25645, 15…</code></pre>
 </div>
 </div>
-<p>#Question 1: Read in the Minnesota tree growth dataset. Use glimpse to understand the structure and names of the dataset. Decribe the structure and what you see in the dataset?</p>
+<p><strong>Question 1:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(tree_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -152,8 +150,8 @@ $ inc     &lt;dbl&gt; 0.930, 0.950, 0.985, 0.985, 0.715, 0.840, 0.685, 0.940, 1.
 $ rad_ib  &lt;dbl&gt; 10.78145, 11.73145, 12.71645, 13.70145, 14.41645, 15.25645, 15…</code></pre>
 </div>
 </div>
-<p>#the structure I see in this dataset is that there are 131,386 rows, and 8 columns: treeID, standID, stand, year, species, age, inc, and rad_ib</p>
-<p>#Question 2: How many records have been made in stand 1?</p>
+<p>The structure I see in this dataset is that there are 131,386 rows, and 8 columns: treeID, standID, stand, year, species, age, inc, and rad_ib. I see a mix of int, chr, and dbl data in the set.</p>
+<p><strong>Question 2:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(tree_data<span class="sc">$</span>standID <span class="sc">==</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -161,9 +159,8 @@ $ rad_ib  &lt;dbl&gt; 10.78145, 11.73145, 12.71645, 13.70145, 14.41645, 15.25645
 logical  130407     979 </code></pre>
 </div>
 </div>
-<p>#I found that there are 979 records in stand 1</p>
-<p>#Question 3: How many records of the Abies balsamea and Pinus strobus species have been made?<br>
-`</p>
+<p>I found that there are 979 records in stand 1.</p>
+<p>Question 3:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(tree_data<span class="sc">$</span>species[tree_data<span class="sc">$</span>species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ABBA"</span>, <span class="st">"PIST"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -171,8 +168,8 @@ logical  130407     979 </code></pre>
     17221 character character </code></pre>
 </div>
 </div>
-<p>#I determined that there are 17221 records of the Abies balsamea and Pinus strobus species</p>
-<p>#Question 4: How many trees are older then 200 years old in the last year of the dataset?</p>
+<p>I determined that there are 17221 records of the Abies balsamea and Pinus strobus species made in this data set.</p>
+<p><strong>Question 4:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="fu">max</span>(year), age <span class="sc">&gt;</span> <span class="dv">200</span>) <span class="sc">%&gt;%</span></span>
@@ -182,10 +179,8 @@ logical  130407     979 </code></pre>
 1     7</code></pre>
 </div>
 </div>
-</section>
-<section id="i-determined-that-7-trees-are-older-than-200-years-old-in-the-last-year-of-the-data-set" class="level1">
-<h1>I determined that 7 trees are older than 200 years old in the last year of the data set</h1>
-<p>#Question 5: What is the oldest tree in the dataset found using slice_max?</p>
+<p>I determined that 7 trees are older than 200 years old in the last year of the data set</p>
+<p><strong>Question 5:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> age, <span class="at">n=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -194,13 +189,13 @@ logical  130407     979 </code></pre>
 1     24       2    A2 2007    PIRE 269 0.37 308.84</code></pre>
 </div>
 </div>
-</section>
-<section id="i-determined-that-the-oldest-tree-in-this-dataset-is-269-years-old." class="level1">
-<h1>I determined that the oldest tree in this dataset is 269 years old.</h1>
-<p>#Question 6: Find the oldest 5 trees recorded in 2001. Use the help docs to understand optional parameters</p>
+<section id="section" class="level1">
+<h1></h1>
+<p>I determined that the oldest tree in this dataset is 269 years old.</p>
+<p><strong>Question 6:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tree_data <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2001</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2001</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> age, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  treeID standID stand year species age   inc  rad_ib
@@ -211,8 +206,8 @@ logical  130407     979 </code></pre>
 5   1712      26    F3 2001    FRNI 206 0.168 154.354</code></pre>
 </div>
 </div>
-<p>#I found that the 5 oldest trees in 2001 were 263, 259, 212,206,and also 206 years old</p>
-<p>#Question 7: Using slice_sample, how many trees are in a 30% sample of those recorded in 2002?</p>
+<p>I found that the 5 oldest trees in 2001 were 263, 259, 212,206,and also 206 years old</p>
+<p><strong>Question 7:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2002</span>) <span class="sc">%&gt;%</span></span>
@@ -222,8 +217,8 @@ logical  130407     979 </code></pre>
 <pre><code>[1] 687</code></pre>
 </div>
 </div>
-<p>#I determined that 687 trees are in 30% sample of those recoded in 2002.</p>
-<p>#Question 8: Filter all trees in stand 5 in 2007. Sort this subset by descending radius at breast height (rad_ib) and use slice_head() to get the top three trees. Report the tree IDs</p>
+<p>I determined that 687 trees are in 30% sample of those recorded in 2002.</p>
+<p><strong>Question 8:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(standID <span class="sc">==</span> <span class="dv">5</span>, year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span></span>
@@ -237,8 +232,8 @@ logical  130407     979 </code></pre>
 3    135 210.1874</code></pre>
 </div>
 </div>
-<p>#I got that the top 3 trees in stand 5 recoreded in 2007, sorted by largest radius at breast height have the tree ID’s of 128, 157, and 135</p>
-<p>#Question 9: Reduce your full data.frame to [treeID, stand, year, and radius at breast height]. Filter to only those in stand 3 with records from 2007, and use slice_min to pull the smallest three trees meaured that year. #using the following code I got that the 3 smallest trees are as follows :</p>
+<p>I got that the top 3 trees in stand 5 recorded in 2007, sorted by largest radius at breast height have the tree ID’s of 128, 157, and 135.</p>
+<p><strong>Question 9:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>smallest_tree_3_2007 <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(standID <span class="sc">==</span> <span class="dv">3</span>, year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span></span>
@@ -254,7 +249,8 @@ $ year   &lt;int&gt; 2007, 2007, 2007
 $ rad_ib &lt;dbl&gt; 47.396, 48.440, 54.925</code></pre>
 </div>
 </div>
-<p>#Question 10: Use select to remove the stand column. Use glimspe to show the dataset.</p>
+<p>The smallest 3 trees recorded in 2007 had the ID’s of 50,56, and 36.</p>
+<p><strong>Question 10:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>smallest_tree_3_2007_nostand <span class="ot">&lt;-</span> smallest_tree_3_2007 <span class="sc">%&gt;%</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>stand)</span>
@@ -267,7 +263,7 @@ $ year   &lt;int&gt; 2007, 2007, 2007
 $ rad_ib &lt;dbl&gt; 47.396, 48.440, 54.925</code></pre>
 </div>
 </div>
-<p>#Question 11: Look at the help document for dplyr::select and examine the “Overview of selection features”. Identify an option (there are multiple) that would help select all columns with the string “ID” in the name. Using glimpse to view the remaining dataset</p>
+<p><strong>Question 11:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>tree_data_IDs <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"ID"</span>))</span>
@@ -279,7 +275,7 @@ $ treeID  &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 $ standID &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</code></pre>
 </div>
 </div>
-<p>#Question 12: Find a selection pattern that captures all columns with either ‘ID’ or ‘stand’ in the name. Use glimpse to verify the selection.</p>
+<p><strong>Question 12:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tree_data_ID_stand <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"ID"</span>),<span class="fu">contains</span>(<span class="st">"stand"</span>))</span>
@@ -292,7 +288,7 @@ $ standID &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 $ stand   &lt;chr&gt; "A1", "A1", "A1", "A1", "A1", "A1", "A1", "A1", "A1", "A1", "A…</code></pre>
 </div>
 </div>
-<p>#Question 13: Looking back at the data dictionary, rename rad_inc and inc to include _[unit] in the name. Unlike earlier options, be sure that this renaming is permanent, and stays with your data.frame (e.g.&nbsp;&lt;-). Use glimpse to view your new data.frame.</p>
+<p><strong>Question 13:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>tree_data <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rad_inc_mm =</span> inc, <span class="at">rad_ib_mm =</span> rad_ib)</span>
@@ -312,7 +308,7 @@ $ rad_inc_mm &lt;dbl&gt; 0.930, 0.950, 0.985, 0.985, 0.715, 0.840, 0.685, 0.940,
 $ rad_ib_mm  &lt;dbl&gt; 10.78145, 11.73145, 12.71645, 13.70145, 14.41645, 15.25645,…</code></pre>
 </div>
 </div>
-<p>#Question 14: A key measurement in forestry in “basal area column”. #BA(m2) = 0.00007854⋅DBH^2 #Where DBH is the diameter at breast height (cm). Use mutate to compute DBH in centimeters, and BA in m2 (HINT: Make sure rad_ib is in cm prior to computing the diameter!). What is the mean BA_m2 of the the species POTR in 2007? #first I have to chnage rad_ib to cm, next adjust rab_ib_cm to DBH_cm, then filter for POTR trees in 2007, and then calculated.</p>
+<p><strong>Question 14:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>tree_data_mutated_q14 <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -329,10 +325,8 @@ $ rad_ib_mm  &lt;dbl&gt; 10.78145, 11.73145, 12.71645, 13.70145, 14.41645, 15.25
 1 0.03696619</code></pre>
 </div>
 </div>
-</section>
-<section id="the-mean-ba-in-m2-is-0.03696619-for-potr-species-in-2007" class="level1">
-<h1>the mean BA in m^2 is 0.03696619, for POTR species in 2007</h1>
-<p>#Question 15: Lets say for the sake of our study, trees are not established until they are 5 years of age. Use if_else to add a boolean column to our dataset called established that is TRUE if the age is greater then 5 and FALSE if less then or equal to five. Once added, use count (see ?count) to determine how many records are from estabilshed trees?</p>
+<p>The mean BA in m^2 is 0.03696619, for POTR species in 2007</p>
+<p><strong>Question 15:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tree_data_older <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">established =</span> <span class="fu">if_else</span>(age <span class="sc">&gt;</span> <span class="dv">5</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
@@ -359,9 +353,10 @@ $ rad_ib_mm  &lt;dbl&gt; 10.78145, 11.73145, 12.71645, 13.70145, 14.41645, 15.25
 </div>
 </div>
 </section>
-<section id="there-are-122503-trees-that-are-established" class="level1">
-<h1>there are 122,503 trees that are established</h1>
-<p>#Question 16: Use mutate and case_when to add a new column to you data.frame that classifies each tree into the proper DBH_class. Once done, limit your dataset to the year 2007 and report the number of each class with count.</p>
+<section id="section-1" class="level1">
+<h1></h1>
+<p>There are 122,503 trees that are “established” based on the criteria</p>
+<p><strong>Question 16:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>tree_data_mutated_w_Class <span class="ot">&lt;-</span> tree_data_mutated_q14 <span class="sc">%&gt;%</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Class =</span> <span class="fu">case_when</span>(</span>
@@ -384,8 +379,8 @@ $ Class &lt;chr&gt; "Pole", "Sapling", "Sawlog"
 $ count &lt;int&gt; 1963, 252, 76</code></pre>
 </div>
 </div>
-<p>#I found that no seedlings were measured, and there were 1963 Poles, 252 saplings and 76 sawlogs</p>
-<p>#Question 17: Compute the mean DBH (in cm) and standard deviation of DBH (in cm) for all trees in 2007. Explain the values you found and their statistical meaning.</p>
+<p>I found that no seedlings were measured, and there were 1963 Poles, 252 saplings and 76 sawlogs</p>
+<p><strong>Question 17:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>df_2007 <span class="ot">&lt;-</span> tree_data_mutated_w_Class <span class="sc">%&gt;%</span> </span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
@@ -401,9 +396,10 @@ $ count &lt;int&gt; 1963, 252, 76</code></pre>
 </div>
 </div>
 </section>
-<section id="i-got-the-following-values" class="level1">
-<h1>I got the following values</h1>
-<p>#Question 18: Compute the per species mean tree age using only those ages recorded in 2003. Identify the three species with the oldest mean age.</p>
+<section id="section-2" class="level1">
+<h1></h1>
+<p>I found that the mean DBH for the trees in 2007 was 16.1 cm and the standard deviation was 6.14cm.</p>
+<p><strong>Question 18:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df_2003 <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2003</span>)</span>
@@ -423,10 +419,8 @@ $ species  &lt;chr&gt; "THOC", "FRNI", "PIST"
 $ mean_age &lt;dbl&gt; 126.63830, 83.08333, 73.28571</code></pre>
 </div>
 </div>
-</section>
-<section id="the-3-oldest-species-on-average-are-thoc-frni-and-pist" class="level1">
-<h1>the 3 oldest species on average are THOC, FRNI, and PIST</h1>
-<p>#Question 19: In a single summarize call, find the number of unique years with records in the data set along with the first and last year recorded?</p>
+<p>The 3 oldest species on average are THOC (126.6 years), FRNI (83.1 years ), and PIST (73.3 year).</p>
+<p><strong>Question 19:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>year_summary <span class="ot">&lt;-</span> tree_data_mutated_q14 <span class="sc">%&gt;%</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
@@ -442,10 +436,8 @@ $ first_year   &lt;int&gt; 1897
 $ last_year    &lt;int&gt; 2007</code></pre>
 </div>
 </div>
-</section>
-<section id="there-ae-111-unique-years-recorded-with-the-first-year-beinf-1897-and-the-last-being-2007." class="level1">
-<h1>There ae 111 unique years recorded, with the first year beinf 1897 and the last being 2007.</h1>
-<p>#Question 20: Determine the stands with the largest number of unique years recorded. Report all stands with largest (or tied with the largest) temporal record.</p>
+<p>There are 111 unique years recorded, with the first year being 1897 and the last being 2007.</p>
+<p><strong>Question 20:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>stand_years <span class="ot">&lt;-</span> tree_data <span class="sc">%&gt;%</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(stand) <span class="sc">%&gt;%</span></span>
@@ -461,10 +453,8 @@ $ stand        &lt;chr&gt; "A1", "D1", "D2", "D3", "F1"
 $ unique_years &lt;int&gt; 111, 111, 111, 111, 111</code></pre>
 </div>
 </div>
-</section>
-<section id="stands-a1-d1-d2-d3-and-f1-have-the-most-unique-years-with-111-years-of-record." class="level1">
-<h1>stands A1, D1, D2, D3 and F1 have the most unique years, with 111 years of record.</h1>
-<p>#FINAL QUESTION</p>
+<p>Stands A1, D1, D2, D3 and F1 have the most unique years, with 111 years of record.</p>
+<p><strong>FINAL QUESTION</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>tree_growth <span class="ot">&lt;-</span> tree_data_mutated_w_Class <span class="sc">%&gt;%</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treeID) <span class="sc">%&gt;%</span></span>
@@ -526,10 +516,8 @@ $ unique_years &lt;int&gt; 111, 111, 111, 111, 111</code></pre>
 3 QURU          0.168    0.0869</code></pre>
 </div>
 </div>
-</section>
-<section id="this-is-a-pinus-resinosa-tree-which-i-count-to-be-the-fastest-growing-tree." class="level1">
-<h1><img src="img/Pinus_resinosa.jpg" class="img-fluid" alt="This is a Pinus resinosa tree, which I count to be the fastest growing tree."></h1>
-<p>This is a Pinus resinosa tree, which i found to be</p>
+<p>I found that the 3 fastest growing species are PIRE, POTR, and PIBA, and the three slowest are LALA, THOC, and QURA. # <img src="img/Pinus_resinosa.jpg" class="img-fluid" alt="This is a Pinus resinosa tree, which I found to be the fastest growing tree."></p>
+<p>This is a Pinus resinosa tree, which I found to be be the fastest growing species, with a mean DBH growth of 0.358cm, and a standard deviation of DBH growth of 0.257cm.</p>
 </section>
 
 </main>

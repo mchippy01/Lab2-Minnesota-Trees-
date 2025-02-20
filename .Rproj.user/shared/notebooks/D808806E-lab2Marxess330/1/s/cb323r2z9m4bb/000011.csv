@@ -1,3 +1,0 @@
-"0","tree_data %>% "
-"0","  filter(year == 2001)%>%"
-"0","  slice_max(order_by = age, n = 5)"

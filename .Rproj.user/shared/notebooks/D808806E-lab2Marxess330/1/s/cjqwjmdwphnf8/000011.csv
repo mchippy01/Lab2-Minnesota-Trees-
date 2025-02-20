@@ -1,0 +1,3 @@
+"0","tree_data %>%"
+"0","  filter(year == max(year), age > 200) %>%"
+"0","  summarise(count = n())"

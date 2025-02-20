@@ -1,0 +1,6 @@
+"0","tree_growth <- tree_data_mutated_w_Class %>%"
+"0","  group_by(treeID) %>%"
+"0","  arrange(year) %>%  "
+"0","  mutate(DBH_growth = DBH_cm - lag(DBH_cm)) "
+"0",""
+"0","print(head(tree_growth))  "

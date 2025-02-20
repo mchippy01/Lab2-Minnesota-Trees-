@@ -1,0 +1,355 @@
+library(dplyr)
+library(readr)
+tree_data <- read_csv("tree_dat.csv")
+glimpse(tree_data)
+library(dplyr)
+glimpse(tree_data)
+str(tree_data)
+View(tree_data)
+Question 1: Read in the Minnesota tree growth dataset. Use glimpse to understand the structure and names of the dataset. Decribe the structure and what you see in the dataset?
+#Question 1: Read in the Minnesota tree growth dataset. Use glimpse to understand the structure and names of the dataset. Decribe the structure and what you see in the dataset?
+glimpse(tree_data.csv )
+library(dplyr)
+summary(tree_data$standID=1)
+summary(tree_data$standID ==1)
+summary(tree_data$species[tree_data$species %in% c("ABBA", "PIST")])
+tree_data |>
+uestion 4: How many trees are older then 200 years old in the last year of the dataset?
+#Question 4: How many trees are older then 200 years old in the last year of the dataset?
+library(dplyr)
+tree_data |>
+filter(year == max(year), age > 200 ) |/
+> tree_data |>
+tree_data |>
++ filter(year == max(year), age > 200 )
+tree_data |>
++ filter(year == max(year), age > 200 )
+>  tree_data |>
+filter(tree_data, age=> 200)
+tree_data %>%
+filter(age >= 200)
+#Question 4: How many trees are older then 200 years old in the last year of the dataset?
+tree_data %>%
+filter(year == max(year), age > 200) %>%
+summarise(count = n())
+tree_data %>%
+slice_max(order_by = age, n=5)
+tree_data %>%
+#Question 6: Find the oldest 5 trees recorded in 2001. Use the help docs to understand optional parameters
+tree_data %>%
+filter(year == 2001)%>%
+slice_max(order_by = age, n = 5)
+tree_data %>%
+filter(year == 2001)%>%
+slice_max(order_by = age, n = 5)
+tree_data %>%
+filter(year == 2001) %>%
+4   1598      24 F1     2001 FRNI      206 0.394
+tree_data %>%
+filter(year == 2002) %>%
+slice_sample(prop = 0.3)
+> tree_data %>%
+> tree_data %>%
++ tree_data %>%
++ filter(year == 2001)%>%
++ slice_max(order_by = age, n = 5)
+tree_data %>%
+filter(year == 2002) %>%
+slice_sample(prop = 0.3) %>%
+summarise(count(n))
+summarise(count = n())
+tree_data %>%
+filter(year == 2002) %>%
+slice_sample(prop = 0.3) %>%
+summarise(count = n())
+tree_data %>%
+filter(stand ==5, year ==2007) %>%
+slice_head(n = 3) %>%
+select(treeID) %>%
+arrange(-rad_ID)
+tree_data %>%
++ filter(stand ==5, year ==2007) %>%
++ slice_head(n = 3) %>%
++ select(treeID) %>%
++ arrange(-rad_ib)
+tree_data %>%
++ filter(stand ==5, year ==2007) %>%   + slice_head(n = 3) %>%
++     + select(treeID) %>%
++     + arrange(-rad_ib)
+tree_data %>%
++ filter(standID ==5, year ==2007) %>%
++ slice_head(n = 3) %>%
++ select(treeID) %>%
++ arrange(-rad_ib)
+tree_data %>%
++ filter(stand == 5, year ==2007) %>%
++ slice_head(n = 3) %>%
++ select(treeID) %>%
++ arrange(-rad_ib)
+tree_data %>%
++ filter(standID == 5, year ==2007) %>%
++ slice_head(n = 3) %>%
++ select(treeID) %>%
++ arrange(-rad_ib)
+tree_data %>%
++ filter(standID ==5, year ==2007) %>%
++ slice_head(n = 3) %>%
++ select(treeID) %>%
++ arrange(-rad_ib)
+tree_data %>%
+filter(standID == 5, year == 2007) %>%
+slice_head(n = 3) %>%
+select(treeID) %>%
+arrange(-rad_ib)
+tree_data %>%
++ filter(stand == 5, year == 2007) %>%
++ slice_head(n = 3) %>%
++ select(treeID) %>%
++ arrange(-rad_ib)
+glimpse(tree_data$stand)
+tree_data %>%
+glimpse(tree_data$stand)
+filter(tree_data$standID == 5, tree_data$year = 2007) %>%
+tree_data %>%
+filter(standID == 5, year == 2007) %>%
+arrange(-rad_ib) %>%
+slice_head(n =3) %>%
+select(treeID)
+arrange(rad_ib) %>%
+#Question 8: Filter all trees in stand 5 in 2007. Sort this subset by descending radius at breast height (rad_ib) and use slice_head() to get the top three trees. Report the tree IDs
+hnfew'na'
+tree_data %>%
++ filter(standID == 5, year == 2007) %>%
++ arrange(rad_ib) %>%
++ slice_head(n =3) %>%
++ select(treeID)
+tree_data %>%
+filter(standID == 5, year == 2007) %>%
+arrange(rad_ib) %>%
+slice_head(n = 3) %>%
+select(treeID)
+tree_data %>%
+bfioebwaio
+librarY(dplyr)
+library(dplyr)
+tree_data %>%
+select(treeID, stand, year, rad_ib) %>%
+filter(stand ==3, year ==2007) %>%
+slice_min(order_by = rad_ib, n=3)
+filter(standID ==3, year ==2007) %>%
+slice_min(order_by = rad_ib, n=3)
+tree_data %>%
+select(treeID, standID, year, rad_ib) %>%
+filter(standID == 3, year == 2007) %>%
+slice_min(order_by = rab_ib n = 3)
+slice_min(order_by = rab_ib, n = 3)
+tree_data %>% + select(treeID, standID, year, rad_ib) %>%
++ filter(standID == 3, year == 2007) %>%
++ slice_min(order_by = rab_ib n = 3)
+tree_data %>%
+hioewqi
+tree_data %>%
+select(treeID, stand, year, rad_ib) %>%
+filter(standID == 3, year == 2007) %>%
+slice_min(order_by = rad_ib)
+tree_data %>%select(treeID, stand, year, rad_ib) %>%  # Keep only relevant columns
+filter(stand == 3, year == 2007) %>%     # Use `stand`, not `standID`
+slice_min(order_by = rad_ib, n = 3)
+tree_data %>%
+select(treeID, stand, year, rad_ib) %>%  # Keep only relevant columns
+filter(stand == 3, year == 2007) %>%     # Use `stand`, not `standID`
+slice_min(order_by = rad_ib, n = 3)
+tree_data %>%
+select(treeID, stand, year, rad_ib) %>%  # Keep only relevant columns
+filter(stand == 3, year == 2007) %>%     # Use `stand`, not `standID`
+slice_min(order_by = rad_ib, n = 3)
+file_path = "path/to/your/tree_dat.csv"  # Update this with the correct path
+df = pd.read_csv(file_path)
+library(dplyr)
+tree_data %>%
+filter(stand == 3, year == 2007)%>%
+slice_min(order_by = rad_ib, n=3) %>%
+select(treeID, stand, year, rad_ib)
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib
+bfod;wq
+tree_data %>%
+filter(stand == 3, year == 2007) %>%
+summarise(total = n())
+> tree_data %>%
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib)
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib)
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib)
+colonames(tree_data)
+colnames(tree_data)
+str(tree_data)
+library(dplyr)
+glimpse(tree_data)
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib)
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib)
+tree_data %>%
+filter(standID == 3, year ==2007)
+tree_data %>%
+filter(standID == 3, year ==2007)
+tree_data %>$
+tree_data %>%
+filter(standID == 3, year ==2007) %>%
+slice_min(order_by = rad_ib, n=3) %>%
+select(treeID, stand, year, rad_ib)
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib)
+tree_data %>%
+filter(standID == 3, year == 2007) %>%
+filter(standID == 3, year == 2007) %>%
+iifeowq'x'
+small_tree_stand_3_2007 <- tree_data %>%
+filter(standID == 3, year == 2007) %>%
+slice_min(order_by = rad_ib, n = 3) %>%
+select(treeID, stand, year, rad_ib)
+tree_data %>%
++ filter(standID == 3, year == 2007)%>%
++ slice_min(order_by = rad_ib, n=3) %>%
++ select(treeID, stand, year, rad_ib)
+#Question 9: Reduce your full data.frame to [treeID, stand, year, and radius at breast height]. Filter to only those in stand 3 with records from 2007, and use slice_min to pull the smallest three trees meaured that year.
+> tree_data %>%
+smallest_tree_3_2007 <- tree_data %>%
+filter(standID == 3, year == 2007) %>%
+slice_min(order_by = rad_ib)%>%
+select(treeID, stand, year, rad_ib)
+smallest_tree_3_2007 <- tree_data %>%
+filter(standID == 3, year == 2007) %>%
+slice_min(order_by = rad_ib, n = 3) %>%
+select(treeID, stand, year, rad_ib)
+nioew'qn'
+View(smallest_tree_3_2007)
+library(ggplot2)
+library(data.table)
+data.table(smallest_tree_3_2007)
+# remove the 'stand' column
+smallest_tree_3_2007_nostand <- tree_data %>%
+select(-stand)
+glimpse(smallest_tree_3_2007_nostand)
+view(smallest_tree_3_2007_nostand)
+View(smallest_tree_3_2007_nostand)
+smallest_tree_3_2007_nostand <- smallest_tree_3_2007 %>%
+select(-stand)
+tree_IDs_onlyw/ID <- tree_data %>%
+select(contains("ID"))
+tree_data_IDs <- tree_data %>%
+select(contains("ID"))
+View(tree_data_IDs)
+glimpse(tree_data_IDs)
+tree_data_Id_stand <- tree_data %>%
+select(contains("ID" or "stand'"))
+tree_data_ID_stand <- tree_data %>%
+select(contains("ID"), contains("stand"))
+glimpse(tree_data_ID_stand)
+> tree_data_ID_stand <- tree_data %>%
+glimpse(tree_data.csv )
+glimpse(tree_data.csv )
+library(dpylr)
+library(dplyr)
+glimpse(tree_data.csv )
+library(readr)
+tree_dat <- read_csv("tree_dat.csv")
+View(tree_dat)
+glimpse(tree_data.csv )
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)     # For data manipulation
+library(readr)     # For reading data files
+library(tidyr)     # For reshaping data
+library(dplyr)
+library(readr)
+library(tidyr)
+glimpse(tree_data.csv )
+glimpse(tree_data.csv )
+glimpse(tree_data)
+summary(tree_data\$standID ==1)
+summary(tree_data$standID ==1)
+summary(tree_data$species[tree_data$species %in% c("ABBA", "PIST")\])
+summarise(tree_data$species[tree_data$species %in% c("ABBA", "PIST")\])
+tree_data %>%
+summarise(species %in% c("ABBA", "PIST"))
+summary(tree_data$species[tree_data$species %in% c("ABBA", "PIST")])
+> tree_data %>%
+#Question 4: How many trees are older then 200 years old in the last year of the dataset?
+```{r}
+tree_data %>%
+filter(year == max(year), age > 200) %>%
+summarise(count = n())
+tree_data %>%
+slice_max(order_by = age, n=1)
+tree_data %>%
+filter(year == 2001)%>%
+slice_max(order_by = age, n = 5)
+tree_data %>%
+filter(year == 2002) %>%
+slice_sample(prop = 0.3)%>%
+nrow()
+tree_data %>%
+filter(standID == 5, year == 2007) %>%
+arrange(rad_ib) %>%
+slice_head(n = 3) %>%
+select(treeID)
+tree_data %>%
+filter(standID == 5, year == 2007) %>%
+arrange(rad_ib) %>%
+slice_head(n = 3) %>%
+select(treeID, rad_ib)
+tree_data %>%
+filter(standID == 5, year == 2007) %>%
+arrange(-rad_ib) %>%
+slice_head(n = 3) %>%
+select(treeID, rad_ib)
+smallest_tree_3_2007 <- tree_data %>%
+filter(standID == 3, year == 2007) %>%
+slice_min(order_by = rad_ib, n = 3) %>%
+select(treeID, stand, year, rad_ib)
+View(small_tree_stand_3_2007)
+glimpse(smallest_tree_3_2007)
+smallest_tree_3_2007_nostand <- smallest_tree_3_2007 %>%
+select(-stand)
+smallest_tree_3_2007_nostand <- smallest_tree_3_2007 %>%
+select(-stand)
+#Question 9: Reduce your full data.frame to [treeID, stand, year, and radius at breast height]. Filter to only those in stand 3 with records from 2007, and use slice_min to pull the smallest three trees meaured that year.
+#using the following code I got that the 3 smallest trees are as follows :
+```{r}
+glimpse(smallest_tree_3_2007_nostand)
+tree_data_IDs <- tree_data %>%
+select(contains("ID"))
+glimpse(tree_data_IDs)
+tree_data_ID_stand <- tree_data %>%
+select(contains("ID"), contains("stand") %>%
+glimpse(tree_data_ID_stand)
+glimpse(tree_data_ID_stand)
+select((contains("ID"), contains("stand"))
+tree_data_ID_stand <- tree_data %>%
+select(contains("ID"),contains("stand"))
+glimpse(tree_data_ID_stand)
+library(dplyr)
+glimpse(tree_data)
+glimpse(tree_data)
+glimpse(tree_data)
+tree_data <- read.csv("tree_dat.csv")
+glimpse(tree_data)

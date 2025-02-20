@@ -1,0 +1,17 @@
+"0","smallest_tree_3_2007_nostand <- smallest_tree_3_2007 %>%"
+"0","  select(-stand)"
+"0","glimpse(smallest_tree_3_2007_nostand)"
+"1","Rows: 3"
+"1",""
+"1","
+"
+"1","Columns: 3"
+"1",""
+"1","
+"
+"1","$ treeID [3m[38;5;246m<int>[39m[23m 50, 56, 36
+$ year   [3m[38;5;246m<int>[39m[23m 2007, 2007, 2007
+$ rad_ib [3m[38;5;246m<dbl>[39m[23m 47.396, 48.440, 54.925"
+"1",""
+"1","
+"

@@ -286,6 +286,8 @@ print(slowest_species)
 
 ```
 
-I found that the 3 fastest growing species are PIRE, POTR, and PIBA, and the three slowest are LALA, THOC, and QURA. \# ![This is a Pinus resinosa tree, which I found to be the fastest growing tree.](img/Pinus_resinosa.jpg)
+I found that the 3 fastest growing species are PIRE, POTR, and PIBA, and the three slowest are LALA, THOC, and QURA.
+
+![](images/Pinus_resinosa.jpg)
 
 This is a Pinus resinosa tree, which I found to be be the fastest growing species, with a mean DBH growth of 0.358cm, and a standard deviation of DBH growth of 0.257cm.
